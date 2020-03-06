@@ -1,13 +1,18 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { SobreComponent } from './components/sobre/sobre.component';
-import { ContatoComponent } from './components/contato/contato.component';
-
+  import { NgModule } from '@angular/core';
+  import { Routes, RouterModule } from '@angular/router';
+  import { HomeComponent } from './components/home/home.component';
+  import { SobreComponent } from './components/sobre/sobre.component';
+  import { ContatoComponent } from './components/contato/contato.component';
+  import { NovoProdutoComponent } from "./components/novo-produto/novo-produto.component";
 
 const routes: Routes = [
   {
-    path: "",
+    path:"",
+    redirectTo:"home",
+     pathMatch:"full"},
+    {
+
+    path: "home",
     component: HomeComponent
   },
   {
@@ -17,6 +22,15 @@ const routes: Routes = [
   {
     path: "contato",
     component: ContatoComponent
+  },
+  {
+    path: "novoProduto",
+    component: NovoProdutoComponent
+  },
+  {
+    path:"**",
+    redirectTo:"home",
+    pathMatch:"full"
   }
 ];
 

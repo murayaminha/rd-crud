@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
     this.lista.listaDoGrupo(grupo.codigo)
 
   }
-
+ 
   ngOnInit(): void {
   }
 

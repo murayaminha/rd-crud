@@ -8,7 +8,7 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./grupos.component.css']
 })
 export class GruposComponent implements OnInit {
-
+  private grupoTotal: Grupo = new Grupo(0, "todos")
   public grupos: Grupo[] = [];
   // evento criado para selecionar o grupo criado
   @Output() grupoClicado = new EventEmitter()
@@ -20,10 +20,11 @@ export class GruposComponent implements OnInit {
       data => {
         // console.log(data)
         // data.forEach((d) => console.log(d.descricao))
-        data.forEach((d) => this.grupos.push(new Grupo(d.codigo, d.descricao)))
+        this.grupos=[this.grupoTotal, ...data]
+        
       }
     )    
-
+      
     // this.grupos.push(new Grupo(1, "Informática"))
     // this.grupos.push(new Grupo(2, "Música"))
     // this.grupos.push(new Grupo(3, "Celulares"))
