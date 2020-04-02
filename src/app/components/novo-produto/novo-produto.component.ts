@@ -24,8 +24,8 @@ export class NovoProdutoComponent implements OnInit {
   ngOnInit(): void {
     this.createForm(new Produto());
   }
-  enviarProduto(produto){
-    console.log(produto)
+  enviarProduto(){
+  
   }
 
 }
